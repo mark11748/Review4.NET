@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "CREATE-POST";
+    Layout = "_Layout";
+}
+@model Review4_.NET.Models.Comment
+
+<h2>Add a new Comment</h2>
+<hr />
+@using (Html.BeginForm("Create","Comment"))
+{
+    <p>@Model.PostId</p>
+    <input type="hidden" name="PostId" value="@Model.PostId"> 
+    @Html.LabelFor(model => model.Author)  
+    @Html.EditorFor(model => model.Author)
+    <br>
+    @Html.LabelFor(model => model.Body)  
+    @Html.EditorFor(model => model.Body)
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("Back to List", "Index" , "Post")

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "CREATE-POST";
+    Layout = "_Layout";
+}
+@model Review4_.NET.Models.Post
+
+<h2>Add a new Post</h2>
+<hr />
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Body)  
+    @Html.EditorFor(model => model.Body)
+    <input type="submit" value="Create" />
+}
+@Html.ActionLink("Back to List", "Index")

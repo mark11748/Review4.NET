@@ -1,0 +1,25 @@
+﻿@{
+    Layout="_Layout";
+    ViewData["Title"] = "Index";
+}
+@using System.Security.Claims
+
+<h2>LANDING PAGE</h2>
+<hr />
+@if(User.Identity.IsAuthenticated)
+{
+    <p>Hello @User.Identity.Name!</p>
+    using (Html.BeginForm("Logout", "Account"))
+    { <input type="submit" class="btn btn-default" value="Logout"/> }
+    <br>
+}
+else
+{
+    <p>@Html.ActionLink("Register", "Register","Account")</p>
+    using (Html.BeginForm("Login", "Account",FormMethod.Get))
+    { <input type="submit" class="btn btn-default" value="Login"/> }
+    <br>
+}
+<p>@Html.ActionLink("Posts", "Index","Post")</p>
+
+
