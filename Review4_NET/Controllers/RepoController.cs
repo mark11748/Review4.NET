@@ -21,9 +21,10 @@ namespace Review4_.NET.Controllers
             _db = db;
         }
 
-        public IActionResult GetRepos()
+        public IActionResult Index()
         {
-            var RepoList = Repo.GetRepos();
+            var RepoList = Repo.GetRepos().Take(3);
+
             return View(RepoList);
         }
     }

@@ -27,7 +27,8 @@ namespace Review4_.NET.Controllers
         public async Task<IActionResult> Index()
         {
             var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            var currentUser = await _userManager.FindByIdAsync(userId);
+            if (userId != null) 
+                { var currentUser = await _userManager.FindByIdAsync(userId); }
             var model = _db.Posts.Include(x=>x.Comments).ToList();
 
             //get posts associated with user

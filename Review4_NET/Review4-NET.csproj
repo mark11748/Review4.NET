@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\" />
+    <Folder Include="Views\Repo\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,4 +25,7 @@
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\EnvironmentVariables.cs" />
+  </ItemGroup>
 </Project>

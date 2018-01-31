@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "REPO LIST";
+    Layout ="_Layout";
+}
+
+@using Review4_.NET.Models
+@model IEnumerable<Review4_.NET.Models.Item>
+
+<h2>REPOS</h2>
+<hr/>
+<br>
+@Html.ActionLink("[BACK]","Index","Account")
+<br>
+<ol>
+    @foreach(var proj in Model)
+    {
+        <li> 
+            <p>@proj.name</p>
+        </li>
+    }
+</ol>
