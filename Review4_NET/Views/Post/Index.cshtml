@@ -25,11 +25,12 @@ $(document).ready(function(){
 </script>  
 
 
-@model IEnumerable<Review3_.NET.Models.Post>
+@model IEnumerable<Review4_.NET.Models.Post>
 
 <h2>POSTS</h2>
     <hr/>
     <br>
+    @Html.ActionLink("[BACK]","Index","Account")
     @if(User.Identity.IsAuthenticated)
     {
         using(Html.BeginForm("Create" , "Post", FormMethod.Get)) 

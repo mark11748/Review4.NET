@@ -40,7 +40,7 @@ namespace Review4_.NET.Controllers
             var user = new User { UserName = model.UserName , Email = model.Email };
             IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
-            { return RedirectToAction("Index","Post"); }
+            { return RedirectToAction("Index"); }
             else { return View(); }
         }
 
