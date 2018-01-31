@@ -14,8 +14,10 @@
 <ol>
     @foreach(var proj in Model)
     {
-        <li> 
-            <p>@proj.name</p>
-        </li>
+        <div style="border: black double 5px;margin-right:50%;padding:15px;font-family:monospace;">
+            <p>@proj.name || <span style="color:red;">[TOTAL STARS]</span>: @proj.stargazers_count</p> 
+            <hr/>
+            <a href="@proj.html_url">@proj.html_url</a>
+        </div>
     }
 </ol>
